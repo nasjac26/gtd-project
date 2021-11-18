@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :teams
-  resources :user_teams
-  resources :users
-  resources :user_tasks
-  resources :tasks
+  resources :teams, only: :create
+  resources :user_teams, only: [:show, :create]
+  resources :users, only: :index
+  resources :user_tasks, only: :index
+  resources :tasks, only: :index
 
   # get "/me", to: "users#show"
   # post "/signup", to: "users#create"
