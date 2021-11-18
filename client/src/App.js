@@ -6,11 +6,13 @@ import Home from "./components/Home";
 
 function App() {
 
-  useEffect(() => {
-    fetch("/users")
-      .then((r) => r.json())
-      .then(data => console.log(data))
-  }, []);
+
+  //This is a sample get request for users
+  // useEffect(() => {
+  //   fetch("/users")
+  //     .then((r) => r.json())
+  //     .then(data => console.log(data))
+  // }, []);
  
 
   return (
