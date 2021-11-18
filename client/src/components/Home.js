@@ -1,8 +1,12 @@
-
+import UserTask from './UserTask';
+import TeamTask from './TeamTask';
 
 function Home() {
     return (
-        <div>Home</div>
+        <div>
+            <UserTask />
+            <TeamTask />
+        </div>
     )
 }
 
