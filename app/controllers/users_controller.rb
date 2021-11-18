@@ -4,6 +4,12 @@ class UsersController < ApplicationController
         render json: User.all
     end
 
+    def show
+        user = User.find(params[:id])
+        render json: user, status: :ok
+    end
+
+
     # # get '/me'
     # def show
     #     if current_user

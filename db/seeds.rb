@@ -6,13 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.delete_all
+UserTask.delete_all
+Task.delete_all
+
+
 puts "Seeding Users...🐱🐱🐱"
 
-User.create(username: "Jacob")
-User.create(username: "Sandy")
-User.create(username: "Dex")
-User.create(username: "Wren")
-User.create(username: "Yoshi")
+User.create(username: "Wren", password: "password")
+User.create(username: "Sandy", password: "password")
+User.create(username: "Dex", password: "password")
+User.create(username: "Jacob", password: "password")
+User.create(username: "Yoshi", password: "password")
 
 puts "Seeding Tasks...🧠🧠🧠"
 
@@ -25,9 +30,9 @@ Task.create(name: "Attend online zooms", weight_tag: 4)
 puts "Seeding users with tasks...🔪🔪🔪"
 
 UserTask.create(user_id: 1, task_id: 1)
-UserTask.create(user_id: 2, task_id: 2)
-UserTask.create(user_id: 3, task_id: 3)
-UserTask.create(user_id: 4, task_id: 4)
+UserTask.create(user_id: 1, task_id: 2)
+UserTask.create(user_id: 1, task_id: 3)
+UserTask.create(user_id: 1, task_id: 4)
 UserTask.create(user_id: 5, task_id: 5)
 
 puts "Seeding Done!🌱🌱🌱" 

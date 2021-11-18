@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :teams, only: :create
+  resources :teams, only: [:create, :show]
   resources :user_teams, only: [:show, :create]
-  resources :users, only: :index
-  resources :user_tasks, only: :index
+  resources :users, only: [:index, :show]
+  resources :user_tasks, only: [:index, :show]
   resources :tasks, only: :index
 
   # get "/me", to: "users#show"

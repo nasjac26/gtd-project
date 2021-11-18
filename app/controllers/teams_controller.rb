@@ -4,6 +4,11 @@ class TeamsController < ApplicationController
         render json: Team.create!(team_create_params)
     end
     
+    def show
+        user = Team.find(params[:id])
+        render json: user, status: :ok
+    end
+    
     private
 
     def team_create_params
