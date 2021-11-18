@@ -1,0 +1,21 @@
+Components:
+    home: landing page(login)
+    navbar: logout/settings cog
+    task: custom user tasks
+    taskcontainer: user border of custom tasks (left)
+    teamtaskcontainer: current active task of team users (right)
+    teamtask: render current user task 
+
+
+    # extra: 
+        notecontainer
+        note 
+
+
+
+# update table columns
+    # user_team 
+        # attributes: user_id, team_id
+    # team
+        # display team active tasks use first_method(users drag task to top row)
+            # attributes: team_name 

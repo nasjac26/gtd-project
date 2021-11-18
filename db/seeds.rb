@@ -8,11 +8,11 @@
 
 puts "Seeding Users...🐱🐱🐱"
 
-User.create(username: "Jacob", admin: false)
-User.create(username: "Sandy", admin: false)
-User.create(username: "Dex", admin: true)
-User.create(username: "Wren", admin: false)
-User.create(username: "Yoshi", admin: false)
+User.create(username: "Jacob")
+User.create(username: "Sandy")
+User.create(username: "Dex")
+User.create(username: "Wren")
+User.create(username: "Yoshi")
 
 puts "Seeding Tasks...🧠🧠🧠"
 
