@@ -31,9 +31,7 @@ function TeamTaskContainer() {
     }
 
     return (
-        <div>
-            {renderTeamTasks()}
-        </div>
+        <div className="container p-3 my-3 border border-5 w-25 ">{renderTeamTasks()}</div>
     )
 }
 
