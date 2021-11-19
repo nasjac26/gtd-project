@@ -1,11 +1,11 @@
 import UserTaskContainer from './UserTaskContainer';
-import TeamTask from './TeamTask';
+import TeamTaskContainer from './TeamTaskContainer';
 
 function Home() {
     return (
         <div>
             <UserTaskContainer />
-            <TeamTask />
+            <TeamTaskContainer />
         </div>
     )
 }
