@@ -19,16 +19,16 @@ class UsersController < ApplicationController
     #     end
     # end
 
-    # # post '/signup'
-    # def create
-    #     user = User.create(user_signup_params)
-    #     if user.valid?
-    #         session[:user_id] = user.id
-    #         render json: user, status: :ok
-    #     else
-    #         render json: { error: user.errors }, status: :unprocessable_entity
-    #     end
-    # end
+    # post '/signup'
+    def create
+        user = User.create(user_signup_params)
+        if user.valid?
+            session[:user_id] = user.id
+            render json: user, status: :ok
+        else
+            render json: { error: user.errors }, status: :unprocessable_entity
+        end
+    end
     
     # # get '/me'
     #     # returns the currently logged in user or 401 unauthorized if none exists. Used to determine whether to load the AuthenticatedApp or UnauthenticatedApp
@@ -37,11 +37,11 @@ class UsersController < ApplicationController
     # # delete '/logout'
     #     #removes the user_id from the session cookie
 
-    # private
+    private
     
-    # def user_signup_params
-    #     params.permit(:username, :password, :password_confirmation)
-    # end
+    def user_signup_params
+        params.permit(:username, :password, :password_confirmation)
+    end
     
     # def user_login_params
     #     params.permit(:username, :password)
