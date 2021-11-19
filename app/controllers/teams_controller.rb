@@ -5,8 +5,8 @@ class TeamsController < ApplicationController
     end
     
     def show
-        user = Team.find(params[:id])
-        render json: user, status: :ok
+        team = Team.find(params[:id])
+        render json: team, status: :ok
     end
     
     private
