@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         user = User.create(user_signup_params)
         if user.valid?
             session[:user_id] = user.id
-            render json: user, status: :ok
+            render json: user, status: :created
         else
             render json: { error: user.errors }, status: :unprocessable_entity
         end
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     private
     
     def user_signup_params
-        params.permit(:username, :password, :password_confirmation)
+        params.permit(:username, :email, :password, :password_confirmation)
     end
     
     # def user_login_params

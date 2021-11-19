@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :teams, only: [:show, :create, :index]
   resources :user_teams, only: [:show, :create]
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :create]
   resources :user_tasks, only: [:index, :show]
   resources :tasks, only: :index
 
