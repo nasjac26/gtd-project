@@ -9,15 +9,17 @@
 User.delete_all
 UserTask.delete_all
 Task.delete_all
+Team.delete_all
+UserTeam.delete_all
 
 
-puts "Seeding Users...🐱🐱🐱"
+puts "Seeding Users...🐱☕🐱☕🐱☕"
 
-User.create(username: "Wren", password: "password")
-User.create(username: "Sandy", password: "password")
-User.create(username: "Dex", password: "password")
-User.create(username: "Jacob", password: "password")
-User.create(username: "Yoshi", password: "password")
+User.create(username: "Wren", password: "password", email: "wrenniepie@hotmail.com")
+User.create(username: "Sandy", password: "password", email: "slo@gmail.com")
+User.create(username: "Dex", password: "password", email: "fireland@apple.com")
+User.create(username: "Jacob", password: "password", email: "bourne2run@yahoo.com")
+User.create(username: "Yoshi", password: "password", email: "not4springboard@castle.com")
 
 puts "Seeding Tasks...🧠🧠🧠"
 
@@ -27,7 +29,7 @@ Task.create(name: "Write things", weight_tag: 3)
 Task.create(name: "Meet with client", weight_tag: 5)
 Task.create(name: "Attend online zooms", weight_tag: 4)
 
-puts "Seeding users with tasks...🔪🔪🔪"
+puts "Seeding Users with UserTasks...🔪🔪🔪"
 
 UserTask.create(user_id: 1, task_id: 1)
 UserTask.create(user_id: 1, task_id: 2)
@@ -35,4 +37,18 @@ UserTask.create(user_id: 1, task_id: 3)
 UserTask.create(user_id: 1, task_id: 4)
 UserTask.create(user_id: 5, task_id: 5)
 
+puts "Seeding Teams...🧿🧿🧿"
+
+Team.create(team_name: "Blue Lions")
+
+puts "Seeding UserTeams...🧄🧄🧄"
+
+UserTeam.create(user_id: 1, team_id: 1)
+UserTeam.create(user_id: 2, team_id: 1)
+UserTeam.create(user_id: 3, team_id: 1)
+UserTeam.create(user_id: 4, team_id: 1)
+UserTeam.create(user_id: 5, team_id: 1)
+
 puts "Seeding Done!🌱🌱🌱" 
+
+# add profile pictures to userteam

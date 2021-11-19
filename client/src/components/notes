@@ -6,12 +6,9 @@ Components:
     teamtaskcontainer: current active task of team users (right)
     teamtask: render current user task 
 
-
     # extra: 
         notecontainer
         note 
-
-
 
 # update table columns
     # user_team 
@@ -19,3 +16,6 @@ Components:
     # team
         # display team active tasks use first_method(users drag task to top row)
             # attributes: team_name 
+
+11/18/21   
+# need to add profile pictures in UserSerializer and seeds.rb

@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 
 function App() {
-
+  // const [] = useState([]);
 
   //This is a sample get request for users
   // useEffect(() => {
@@ -13,7 +13,7 @@ function App() {
   //     .then((r) => r.json())
   //     .then(data => console.log(data))
   // }, []);
- 
+
 
   return (
     <div>
