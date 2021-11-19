@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react';
 import TeamTask from "./TeamTask";
 
 function TeamTaskContainer() {
-    const [teamTasks, setTeamTasks] = useState([])
+    const [teamTasks, setTeamTasks] = useState([]);
 
     useEffect(() => {
     fetch("/teams/1")

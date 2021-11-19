@@ -1,6 +1,11 @@
 function TeamTask() {
     return (
-        <div>TeamTask</div>
+        <div>
+            <h1>TeamTask</h1>
+            {/* <div className="card">
+                <h4 className="card-body">{props.userName}{props.taskName}{props.taskWeight}</h4>
+            </div> */}
+        </div>
     )
 }
 

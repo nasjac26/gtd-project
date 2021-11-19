@@ -8,12 +8,12 @@ function UserTaskContainer() {
   useEffect(() => {
   fetch("/users/1")
     .then((r) => r.json())
-    .then((data) => checkIfUserTaskExists(data)) //taking data and running it through handler function to see if it exists before SETTING to usertasks
+    .then((data) => checkIfUserTaskExists(data)) // taking data and running it through handler function to see if it exists before SETTING to usertasks
   }, []);
   
   function checkIfUserTaskExists(data){
     if (!!data.tasks){
-      setUserTasks(data.tasks); //if exists set to usertasks 
+      setUserTasks(data.tasks); // if exists set to usertasks 
     }
   }
 
