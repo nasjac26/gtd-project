@@ -8,6 +8,10 @@ class TeamsController < ApplicationController
         team = Team.find(params[:id])
         render json: team, status: :ok
     end
+
+    def index
+        render json: User.all
+    end
     
     private
 

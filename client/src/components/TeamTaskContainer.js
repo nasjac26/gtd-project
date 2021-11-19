@@ -12,8 +12,16 @@ function TeamTaskContainer() {
     }, []);
 
     function checkIfTeamTasksExist(data) {
-        if (!!data.tasks) {
-            setTeamTasks(data.tasks);
+        if (!!data.users) {
+           let allTasks = data.users.map((user) => {
+                let username = user.username;
+                return user.tasks.map((task) => {
+                    task.username = username
+                    return task
+               })
+           })
+          
+            setTeamTasks(allTasks.flat());
         }
     }
 
@@ -29,8 +37,10 @@ function TeamTaskContainer() {
             )
         })  
     }
-
+    
     return (
+        // <div></div>
+        
         <div className="container p-3 my-3 border border-5 w-25 ">{renderTeamTasks()}</div>
     )
 }
