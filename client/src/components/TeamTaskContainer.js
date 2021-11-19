@@ -13,14 +13,13 @@ function TeamTaskContainer() {
 
     function checkIfTeamTasksExist(data) {
         if (!!data.users) {
-           let allTasks = data.users.map((user) => {
+            let allTasks = data.users.map((user) => {
                 let username = user.username;
                 return user.tasks.map((task) => {
                     task.username = username
                     return task
-               })
-           })
-          
+                })
+            })
             setTeamTasks(allTasks.flat());
         }
     }
@@ -30,17 +29,15 @@ function TeamTaskContainer() {
             return (
                 <TeamTask 
                     key={teamTask.id}
-                    userName={teamTask.username}
-                    taskName={teamTask.username.name}
-                    taskWeight={teamTask.username.weight_tag}
+                    username={teamTask.username}
+                    taskname={teamTask.name}
+                    taskweight={teamTask.weight_tag}
                 />
             )
         })  
     }
     
     return (
-        // <div></div>
-        
         <div className="container p-3 my-3 border border-5 w-25 ">{renderTeamTasks()}</div>
     )
 }

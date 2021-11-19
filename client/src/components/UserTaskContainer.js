@@ -22,15 +22,14 @@ function UserTaskContainer() {
       return (
         <UserTask 
           key={userTask.id}
-          taskName={userTask.name}
-          taskWeight={userTask.weight_tag}
+          taskname={userTask.name}
+          taskneight={userTask.weight_tag}
         />
       );
     });
   }
 
   return (
-    // <div></div>
     <div className="container p-3 my-3 border border-5 w-25 ">{renderUserTasks()}</div>
   )
 }
