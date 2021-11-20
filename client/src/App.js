@@ -1,19 +1,23 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import Login from "./components/Login";
 
 function App() {
-  // const [] = useState([]);
+  const [user, setUser] =useState(null);
 
-  //This is a sample get request for users
-  // useEffect(() => {
-  //   fetch("/users")
-  //     .then((r) => r.json())
-  //     .then(data => console.log(data))
-  // }, []);
+  useEffect(() => {
+    //this auto logins
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
+  if (!user) return <Login />;
 
   return (
     <div>
