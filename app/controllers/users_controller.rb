@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     #no idea what this does
-    skip_before_action :authorize, only: :create
+    skip_before_action :authorize, only: :show
 
      #kept this the same cause it has an error writter out
     # post '/signup'
@@ -16,15 +16,16 @@ class UsersController < ApplicationController
     end
 
     #this accesses user if they exist if not they wont see anything
-    def show
-        render json: User.find(session[user_id]), status: :ok
-    end
+    # def show
+    #     render json: User.find(session[user_id]), status: :ok
+    # end
 
 
     # get '/me'
     def show
         if current_user
-            render json: current_user, status: :ok
+            render json: User.find(session[user_id]), status: :ok
+            # render json: current_user, status: :ok
         else
             render json: { error: 'No active session' }, status: :unauthorized
         end

@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorize, only: :create
     # post '/login'
     def create
         user = User.find_by_username(params[:username])
