@@ -17,11 +17,11 @@ function App() {
     });
   }, []);
 
-  if (!user) return <Login />;
+  if (!user) return <Login onLogin={setUser} />;
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user} setUser={setUser}  />
       <Routes>
         <Route path="/" element={<Home />} ></Route>
       </Routes>

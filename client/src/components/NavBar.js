@@ -1,10 +1,21 @@
-function NavBar() {
+import React from "react";
+
+
+function NavBar( {user, setUser } ) {
+    function handleLogoutClick() {
+        fetch("/logout", { method: "DELETE" }).then((r) => {
+            if (r.ok) {
+            setUser(null);
+            }
+        });
+    }
+    
     return (
         <div>
-            <nav class="navbar navbar-dark bg-dark container-md text-white ">
-                <div class="container">
-                    <span class="navbar-brand mb-0 h1">Navbar</span>
-                </div>
+            <nav>
+            <button variant="outline" onClick={handleLogoutClick}>
+                Logout
+            </button>
             </nav>
         </div>
     )
