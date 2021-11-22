@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     #no idea what this does
     skip_before_action :authorize, only: :show
 
-     #kept this the same cause it has an error writter out
+    #kept this the same cause it has an error writter out
     # post '/signup'
     #this creates a stored user inside the session hash
     def create
@@ -31,7 +31,6 @@ class UsersController < ApplicationController
         end
     end
 
-   
     
     # # get '/me'
     #     # returns the currently logged in user or 401 unauthorized if none exists. Used to determine whether to load the AuthenticatedApp or UnauthenticatedApp

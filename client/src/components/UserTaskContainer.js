@@ -6,16 +6,16 @@ function UserTaskContainer() {
   const [userTasks, setUserTasks] = useState([]);
   
   useEffect(() => {
-  fetch("/users/1")
+  fetch("/users")
     .then((r) => r.json())
-    .then((data) => checkIfUserTaskExists(data)) //taking data and running it through handler function to see if it exists before SETTING to usertasks
+    .then((data) => console.log(data)) //taking data and running it through handler function to see if it exists before SETTING to usertasks
   }, []);
   
-  function checkIfUserTaskExists(data){
-    if (!!data.tasks){
-      setUserTasks(data.tasks); //if exists set to usertasks 
-    }
-  }
+  // function checkIfUserTaskExists(data){
+  //   if (!!data.tasks){
+  //     setUserTasks(data.tasks); //if exists set to usertasks 
+  //   }
+  // }
 
   function renderUserTasks() {
     return userTasks.map((userTask) => {

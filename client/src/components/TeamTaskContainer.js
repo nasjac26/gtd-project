@@ -6,7 +6,7 @@ function TeamTaskContainer() {
     const [teamTasks, setTeamTasks] = useState([])
 
     useEffect(() => {
-    fetch("/teams/1")
+    fetch("/teams")
         .then((r) => r.json())
         .then((data) => checkIfTeamTasksExist(data))
     }, []);
