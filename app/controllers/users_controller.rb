@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     # get '/me'
 
-
     def show
         render json: User.find(params[:id])
     end
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
     #         render json: { error: 'No active session' }, status: :unauthorized
     #     end
     # end
-    
+
     #kept this the same cause it has an error writter out
     # post '/signup'
     #this creates a stored user inside the session hash
