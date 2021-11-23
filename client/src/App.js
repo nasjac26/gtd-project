@@ -5,9 +5,22 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Login from "./components/Login";
 
+function getSessionStorageOrDefault(key, defaultValue) {
+  const stored = sessionStorage.getItem(key);
+  if (!stored) {
+    return defaultValue;
+  }
+  return JSON.parse(stored);
+}
+
+
 
 function App() {
-  const [user, setUser] =useState(null);
+  const [user, setUser] = useState(
+      getSessionStorageOrDefault('loginform', false)
+    );
+
+
 
   useEffect(() => {
     //this auto logins
@@ -18,7 +31,19 @@ function App() {
     });
   }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
+
+  useEffect(() => {
+    sessionStorage.setItem('loginform', JSON.stringify(user));
+  }, [user]);
+
+  if (!user) {
+    return (
+      <div>
+        <Login onLogin={setUser} />
+      </div>
+    );
+  }
+// if (!user) return ;
 
   return (
     <div>
@@ -32,13 +57,3 @@ function App() {
 
 export default App;
 
-// function App() {
-//   return (
-//     <Routes>
-//       <Route path="invoices" element={<Invoices />}>
-//         <Route path=":invoiceId" element={<Invoice />} />
-//         <Route path="sent" element={<SentInvoices />} />
-//       </Route>
-//     </Routes>
-//   );
-// }
