@@ -5,17 +5,18 @@ import UserTask from './UserTask';
 function UserTaskContainer(props) {
   const [userTasks, setUserTasks] = useState([]);
   let id = props.user_id
+
   useEffect(() => {
   fetch(`/users/${id}`)
     .then((r) => r.json())
-    .then((data) => console.log(data)) //taking data and running it through handler function to see if it exists before SETTING to usertasks
-  }, []);
+    .then((data) => checkIfUserTaskExists(data)) //taking data and running it through handler function to see if it exists before SETTING to usertasks
+  }, [id]);
   
-  // function checkIfUserTaskExists(data){
-  //   if (!!data.tasks){
-  //     setUserTasks(data.tasks); //if exists set to usertasks 
-  //   }
-  // }
+  function checkIfUserTaskExists(data){
+    if (!!data.tasks){
+      setUserTasks(data.tasks); //if exists set to usertasks 
+    }
+  }
 
   function renderUserTasks() {
     return userTasks.map((userTask) => {

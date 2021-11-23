@@ -6,7 +6,7 @@ function Home(props) {
     return (
         <div>
             <UserTaskContainer user_id={props.user.id}  />
-            <TeamTaskContainer />
+            <TeamTaskContainer team_id={props.user} />
         </div>
     )
 }
