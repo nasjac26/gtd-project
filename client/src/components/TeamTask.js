@@ -1,11 +1,13 @@
 function TeamTask(props) {
     return (
-        <div className="container">
-            <p>
-                {props.username} 
-                {props.taskname} 
-                {props.taskweight}
-            </p>
+        <div>
+            <div className="card">
+                <div className="card-body">
+                    <p>{props.username}</p>
+                    <p>{props.taskname}</p>
+                    <p>Priotity: {props.taskweight}</p>
+            </div>
+        </div>
         </div>
     )
 }
