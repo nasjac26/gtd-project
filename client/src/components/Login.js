@@ -9,7 +9,7 @@ const [isLoading, setIsLoading] = useState(false);
 
 
 
-function handleSubmit(e) {
+function handleLoginSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
     fetch("/login", {
@@ -30,7 +30,7 @@ function handleSubmit(e) {
 }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleLoginSubmit}>
             <label >
                 <p>Username</p>
                 <input 

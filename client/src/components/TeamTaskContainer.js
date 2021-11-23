@@ -5,12 +5,14 @@ import TeamTask from "./TeamTask";
 function TeamTaskContainer(props) {
     const [teamTasks, setTeamTasks] = useState([])
 
-    console.log(props)
+    let id = props.team_id;
+
+    console.log("check team props", props)
     useEffect(() => {
-    fetch(`/teams/1`)
+    fetch(`/teams/${id}`)
         .then((r) => r.json())
         .then((data) => checkIfTeamTasksExist(data))
-    }, []);
+    }, [id]);
 
     function checkIfTeamTasksExist(data) {
         if (!!data.users) {

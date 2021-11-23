@@ -4,7 +4,8 @@ import UserTask from './UserTask';
 
 function UserTaskContainer(props) {
   const [userTasks, setUserTasks] = useState([]);
-  let id = props.user_id
+
+  let id = props.user_id;
 
   useEffect(() => {
   fetch(`/users/${id}`)
