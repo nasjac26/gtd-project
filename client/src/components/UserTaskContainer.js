@@ -32,7 +32,11 @@ function UserTaskContainer(props) {
   }
 
   return (
-    <div className="container p-3 my-3 border border-5 w-25 ">{renderUserTasks()}</div>
+    <div className="container border">
+      <h1 className="d-flex justify-content-around pb-4">What you are getting done</h1>
+      <div className="d-flex justify-content-around pb-4">{renderUserTasks()}</div>
+    </div>
+
   )
 }
 

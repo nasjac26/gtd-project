@@ -41,7 +41,10 @@ function TeamTaskContainer(props) {
     }
     
     return (
-        <div className="container p-3 my-3 border border-5 w-25 ">{renderTeamTasks()}</div>
+        <div className="container border">
+            <h1 className="d-flex justify-content-around pb-4">What your team is getting done</h1>
+            <div className="d-flex justify-content-around pb-4">{renderTeamTasks()}</div>
+        </div>
     )
 }
 
