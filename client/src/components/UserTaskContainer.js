@@ -2,11 +2,11 @@ import React from 'react';
 import { useState, useEffect} from 'react';
 import UserTask from './UserTask';
 
-function UserTaskContainer() {
+function UserTaskContainer(props) {
   const [userTasks, setUserTasks] = useState([]);
-  
+  let id = props.user_id
   useEffect(() => {
-  fetch("/users")
+  fetch(`/users/${id}`)
     .then((r) => r.json())
     .then((data) => console.log(data)) //taking data and running it through handler function to see if it exists before SETTING to usertasks
   }, []);
@@ -23,7 +23,7 @@ function UserTaskContainer() {
         <UserTask 
           key={userTask.id}
           taskname={userTask.name}
-          taskneight={userTask.weight_tag}
+          taskweight={userTask.weight_tag}
         />
       );
     });

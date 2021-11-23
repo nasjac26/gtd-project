@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Login from "./components/Login";
 
+
 function App() {
   const [user, setUser] =useState(null);
 
@@ -23,7 +24,7 @@ function App() {
     <div>
       <NavBar user={user} setUser={setUser}  />
       <Routes>
-        <Route path="/" element={<Home />} ></Route>
+        <Route path="/" element={<Home user={user} setUser={setUser} />}  ></Route>
       </Routes>
     </div>
   )

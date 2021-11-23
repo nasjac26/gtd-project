@@ -1,10 +1,11 @@
 import UserTaskContainer from './UserTaskContainer';
 import TeamTaskContainer from './TeamTaskContainer';
 
-function Home() {
+function Home(props) {
+    console.log(props)
     return (
         <div>
-            <UserTaskContainer />
+            <UserTaskContainer user_id={props.user.id}  />
             <TeamTaskContainer />
         </div>
     )
