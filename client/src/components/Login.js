@@ -26,6 +26,7 @@ function handleSubmit(e) {
             r.json().then((err) => setErrors(err.errors));
         }
     });
+    // add redirect hook();
 }
 
     return(

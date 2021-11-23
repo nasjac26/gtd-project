@@ -1,12 +1,11 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
 import TeamTask from "./TeamTask";
-import { useParams } from "react-router-dom"
 
-function TeamTaskContainer() {
+function TeamTaskContainer(props) {
     const [teamTasks, setTeamTasks] = useState([])
-    const params = useParams();
-    
+
+    console.log(props)
     useEffect(() => {
     fetch(`/teams/1`)
         .then((r) => r.json())
