@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
 import TeamTask from "./TeamTask";
+import { useParams } from "react-router-dom"
 
 function TeamTaskContainer() {
     const [teamTasks, setTeamTasks] = useState([])
-
+    const params = useParams();
+    
     useEffect(() => {
-    fetch("/teams/1")
+    fetch(`/teams/1`)
         .then((r) => r.json())
         .then((data) => checkIfTeamTasksExist(data))
     }, []);

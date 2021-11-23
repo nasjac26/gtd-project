@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
     end
 
     def index
-        render json: User.all
+        render json: Team.all
     end
     
     private
